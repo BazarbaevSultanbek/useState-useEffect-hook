@@ -1,24 +1,25 @@
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
 import "./counter.scss"
 
 function Counter() {
-    const local = localStorage.getItem("count")
-    const [count, setCount] = useState(JSON.parse(local));
-    if (local === null) {
-        localStorage.setItem("count", 0);
-    } else {
-        localStorage.setItem("count", count)
-    }
+    const local = localStorage.getItem("count");
+    const [count, setCount] = useState(parseInt(local, 10) || 0);
+
     const inc = () => {
-        setCount(prevState => prevState + 1)
+        setCount(prevState => prevState + 1);
     }
 
     const dec = () => {
-        setCount(prevState => prevState - 1)
+        setCount(prevState => prevState - 1);
     }
+
     const reset = () => {
-        setCount(0)
+        setCount(0);
     }
+
+    useEffect(() => {
+        localStorage.setItem("count", count);
+    }, [count]);
 
     return (
         <div className="Counter">
