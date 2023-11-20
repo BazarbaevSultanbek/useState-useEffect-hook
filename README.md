@@ -1,4 +1,4 @@
-# useState-useEffect-hook with Vite + React
+# useState and useEffect hooks with Vite + React
 
 You can see Click 🖱️, Time 🕒, Change 📍, Position 🔗, Color Select 🎨, Counter 🔢 pages on this repository 📗!
 
